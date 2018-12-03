@@ -8,7 +8,7 @@
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
       <% end %>
-      <%= product.title %> $ <%= render_price_by_membership(current_user, product) %>
+      <%= product.title %> $ <%= product.price %>
     </div>
   <% end %>
 </div>
