@@ -3,13 +3,13 @@ services:
   db:
     image: postgres
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+      - /var/lib/postgresql/data
 
-  web:
+  app:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
-      - .:/myapp
+      - .:/honestbee_interview_test
     ports:
       - "3000:3000"
     depends_on:
