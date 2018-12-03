@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">會員方案</div>
+      <div class="panel-body">
+        <% if current_user.has_premium_membership? %>
+          <p>您現在已經是 Premium 會員了</p>
+        <% else %>
+          <p>一次購買，終身享受</p>
+          <p>購買 Premium 方案，可以享有所有產品 8 折的優惠。</p>
+
+          <%= link_to "立即升級", new_premium_membership_order_path, class: "btn btn-primary"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,7 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :premium_membership_orders
+
   def admin?
     is_admin
+  end
+
+  def has_premium_membership?
+    premium_membership_orders.complete.exists?
   end
 end

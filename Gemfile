@@ -23,6 +23,8 @@ gem 'simple_form'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'aasm'
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do

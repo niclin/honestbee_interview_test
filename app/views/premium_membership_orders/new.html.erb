@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">會員方案</div>
+      <div class="panel-body">
+        <p>您訂購的是 Premium 無限期方案，可以享有所有產品 8 折的優惠。</p>
+
+        <%= link_to "Check Out", premium_membership_orders_path(@premium_membership_order), method: :post, class: "btn btn-primary"%>
+      </div>
+    </div>
+  </div>
+</div>

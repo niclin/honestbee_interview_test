@@ -7,5 +7,9 @@ Rails.application.routes.draw do
 
   resources :products
 
+  resources :premium_membership_orders, only: [:new, :create]
+
+  get 'pricing', to: "pages#pricing"
+
   root 'products#index'
 end

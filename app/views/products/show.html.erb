@@ -8,6 +8,11 @@
   </div>
   <div class="col-md-6">
     <h2> <%= @product.title %> </h2>
-    <div class="product-price"> $ <%= @product.price %> </div>
+
+
+    <div class="product-price">
+      <p>原價 <%= @product.price %> 元</p>
+      <strong>Premium 會員只要 <%= render_price_by_membership(current_user, @product) %> 元</strong>
+    </div>
   </div>
 </div>
