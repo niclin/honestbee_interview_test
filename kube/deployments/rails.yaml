@@ -34,7 +34,7 @@ spec:
         - "3000"
         - -b
         - 0.0.0.0
-        image: niclin/honestbee-interview-test:v1
+        image: niclin/honestbee-interview-test:latest
         imagePullPolicy: IfNotPresent
         env:
         - name: DATABASE_URL

@@ -92,6 +92,7 @@ When `Pod` status is running
 $ kubectl expose deployment app --type=NodePort
 ```
 
+
 ### Test the app
 
 ```
