@@ -1,14 +1,12 @@
 RSpec.describe ProductsController, type: :controller do
   describe "GET index" do
-    before do
-      @product1 = create(:product)
-      @product2 = create(:product)
-    end
+    let(:product1) { create(:product) }
+    let(:product2) { create(:product) }
 
     it "assigns @products and render" do
       get :index
 
-      expect(assigns[:products]).to eq([@product1, @product2])
+      expect(assigns[:products]).to eq([product1, product2])
     end
 
     it "render template" do

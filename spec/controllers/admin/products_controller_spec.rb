@@ -85,7 +85,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
         end.to change { Product.count }.by(0)
       end
 
-      it "create a new produce record" do
+      it "create a new product record" do
         expect do
           post :create, params: { product: attributes_for(:product) }
         end.to change { Product.count }.by(1)

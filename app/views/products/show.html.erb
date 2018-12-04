@@ -13,7 +13,7 @@
     <div class="product-price">
       <p>原價 <%= @product.price %> 元</p>
       <% if user_signed_in? && current_user.has_premium_membership? %>
-        <strong>Premium 會員只要 <%= render_price_by_membership(current_user, @product) %> 元</strong>
+        <strong class="discount-price">Premium 會員價只要 <%= render_price_by_membership(current_user, @product) %> 元</strong>
       <% end %>
     </div>
   </div>
