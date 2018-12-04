@@ -1,6 +1,10 @@
+sudo: required
+
 language: ruby
-rvm:
-  - 2.4.4
+
+services:
+  - docker
+
 script:
-  - bundle exec rails db:create db:migrate RAILS_ENV=test
-  - bundle exec rspec
+  - docker-compose build
+  - docker-compose run app bundle exec rspec
