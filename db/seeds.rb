@@ -1,5 +1,3 @@
-require "faker"
-
 def generate_admin_account
   u = User.new
 
