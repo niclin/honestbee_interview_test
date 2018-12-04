@@ -106,4 +106,40 @@ RSpec.describe Admin::ProductsController, type: :controller do
       end
     end
   end
+
+  describe "GET edit" do
+    context "when user is admin" do
+      let(:user) { create(:user, is_admin: true) }
+      let(:product) { create(:product) }
+
+      before do
+        sign_in user
+
+        get :edit, params: { id: product.id }
+      end
+
+      it "assigns product" do
+        expect(assigns[:product]).to eq(product)
+      end
+
+      it "renders template" do
+        expect(response).to render_template("edit")
+      end
+    end
+
+    context "when user is not admin" do
+      let(:user) { create(:user, is_admin: false) }
+      let(:product) { create(:product) }
+
+      before do
+        sign_in user
+
+        get :edit, params: { id: product.id }
+      end
+
+      it "redirect_to root_path" do
+        expect(response).to redirect_to root_path
+      end
+    end
+  end
 end
