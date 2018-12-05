@@ -102,11 +102,23 @@ Run migration
 $ kubectl exec -it POD_NAME rails db:migrate
 ```
 
+## Ingress
 
-### Test the app
+Finally create the Ingress resource:
 
 ```
-$ minikube service app
+kubectl create -f kube/ingresses/ingress.yaml
 ```
 
+## Use minikube
+
+Get minikube IP
+
+```
+$ minikube ip
+
+# 192.168.99.100
+```
+
+Open browser http://192.168.99.100
 
