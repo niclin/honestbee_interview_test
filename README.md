@@ -57,39 +57,36 @@ $ kubectl create secret generic railsapp-secrets --from-literal=secret-key-base=
 
 ### Postgres
 
+Deployment
+
 ```
 $ kubectl create -f kube/deployments/db.yaml
 ```
 
-Check the status.
+Service
 
 ```
-$ kubectl get pods
+kubectl create -f kube/services/db-service.yaml
 ```
-
-When `Pod` status is running
-
-```bash
-$ kubectl expose deployment db
-```
-
 
 ### Rails
+
+Deployment
 
 ```
 $ kubectl create -f kube/deployments/rails.yaml
 ```
 
-Check the status.
+Service
 
 ```
-$ kubectl get pods
+$ kubectl create -f kube/services/rails-service.yaml
 ```
 
-When `Pod` status is running
+Run migration
 
 ```
-$ kubectl expose deployment app --type=NodePort
+$ kubectl exec -it POD_NAME rails db:migrate
 ```
 
 
