@@ -9,13 +9,12 @@ ENV BUNDLE_WITHOUT ${BUNDLE_WITHOUT}
 ENV RAILS_SERVE_STATIC_FILES true
 ENV RAILS_LOG_TO_STDOUT true
 
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /honestbee_interview_test
 WORKDIR /honestbee_interview_test
 
-COPY Gemfile /honestbee_interview_test/Gemfile
-COPY Gemfile.lock /honestbee_interview_test/Gemfile.lock
+COPY Gemfile* /honestbee_interview_test/
 
 RUN bundle config --global frozen 1 \
  && bundle install -j4 --retry 3 \
