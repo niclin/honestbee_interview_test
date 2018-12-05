@@ -5,12 +5,12 @@ metadata:
   labels:
     app: honestbee-interview-test
 spec:
-  type: NodePort
+  type: LoadBalancer
+  loadBalancerIP: 35.185.138.84
   ports:
     - name: http
       protocol: TCP
-      port: 3000
-      nodePort: 30390
+      port: 80
       targetPort: 3000
   selector:
     run: app

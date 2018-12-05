@@ -11,6 +11,11 @@ COPY Gemfile.lock /honestbee_interview_test/Gemfile.lock
 RUN bundle install
 ADD . /honestbee_interview_test
 
+# build assets
+RUN bundle exec rake assets:precompile
+
+ENV RAILS_ENV=production
+
 COPY docker-entrypoint.sh /usr/local/bin
 
 RUN chmod 777 /usr/local/bin/docker-entrypoint.sh \
