@@ -1,6 +1,9 @@
 FROM ruby:2.4.4
 
-ENV RAILS_ENV=production
+ARG RAILS_ENV
+
+ENV RAILS_ENV ${RAILS_ENV}
+
 ENV RAILS_SERVE_STATIC_FILES true
 ENV RAILS_LOG_TO_STDOUT true
 
@@ -16,7 +19,7 @@ RUN bundle install --without development test
 ADD . /honestbee_interview_test
 
 # build assets
-RUN RAILS_ENV=production rails assets:precompile
+RUN bundle exec rake assets:precompile
 
 COPY docker-entrypoint.sh /usr/local/bin
 

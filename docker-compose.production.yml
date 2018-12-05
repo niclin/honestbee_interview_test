@@ -17,9 +17,7 @@ services:
     build:
       context: .
       args:
-        - FOLDERS_TO_REMOVE=spec node_modules app/assets vendor/assets lib/assets tmp/cache
         - RAILS_ENV=production
-        - BUNDLE_WITHOUT=development:test
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/honestbee_interview_test
