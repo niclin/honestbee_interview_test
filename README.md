@@ -22,7 +22,7 @@
 
 - [從零搭建，如何讓 Rails 跑在 Kubernetes(k8s)（一）](https://blog.niclin.tw/2018/11/29/%E5%BE%9E%E9%9B%B6%E6%90%AD%E5%BB%BA%E5%A6%82%E4%BD%95%E8%AE%93-rails-%E8%B7%91%E5%9C%A8-kubernetesk8s%E4%B8%80/)
 - [從零搭建，如何讓 Rails 跑在 Kubernetes(k8s)（二）](https://blog.niclin.tw/2018/11/30/%E5%BE%9E%E9%9B%B6%E6%90%AD%E5%BB%BA%E5%A6%82%E4%BD%95%E8%AE%93-rails-%E8%B7%91%E5%9C%A8-kubernetesk8s%E4%BA%8C/)
-        
+
 ## Demo
 
 隨時撤掉，先掛在 GCP 上。
@@ -52,7 +52,9 @@ Sign in to the admin account:
 
 ## Tests / CI
 
-On every push, the test suite is run in public on Travis CI
+On every push, the test suite is run in public on Travis CI.
+
+[![Build Status](https://travis-ci.com/niclin/honestbee_interview_test.svg?branch=master)](https://travis-ci.com/niclin/honestbee_interview_test)
 
 ## Kubernetes
 

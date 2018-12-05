@@ -6,5 +6,5 @@ services:
   - docker
 
 script:
-  - docker-compose -f docker-compose.test.yml build
+  - docker-compose -f docker-compose.test.yml build --pull
   - docker-compose -f docker-compose.test.yml run --rm app sh -c "bundle exec rspec"
