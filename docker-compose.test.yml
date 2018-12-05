@@ -12,6 +12,7 @@ services:
       context: .
       args:
         - RAILS_ENV=test
+        - BUNDLE_WITHOUT=production
     volumes:
       - .:/honestbee_interview_test
     environment:
